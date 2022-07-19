@@ -10,11 +10,11 @@ def evi_th():
     evi_th_data = master.execute(1, cst.READ_INPUT_REGISTERS, 1, 2)
     time.sleep(0.5)
 
-    return evi_th_data
+    return (evi_th_data)
 
 if __name__ == '__main__':
     while True:
         th_data = evi_th()
         
         print (th_data)
-        time.sleep(120)
+        time.sleep(10)
