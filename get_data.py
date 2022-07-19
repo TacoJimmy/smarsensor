@@ -8,6 +8,8 @@ def evi_th():
     master.set_timeout(5.0)
     master.set_verbose(True)
     evi_th_data = master.execute(1, cst.READ_INPUT_REGISTERS, 1, 2)
+    evi_th_data[0] = evi_th_data[0]*0.1
+    evi_th_data[1] = evi_th_data[1]*0.1
     time.sleep(0.5)
 
     return (evi_th_data)
