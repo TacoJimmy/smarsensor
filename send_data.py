@@ -5,11 +5,13 @@ import get_data
 def req_post():
     try:
         cgpt_th = get_data.evi_th()
-        #temp_payload = {'data':30}
-        #html = requests.post('https://strawberry.cgptiot.com.tw/iot/Temperature.php?id=1680001-1',data = temp_payload)
-        humi_payload = {'data':60}
-        html = requests.post('https://strawberry.cgptiot.com.tw/iot/Humidity.php?id=1680001-1',data = humi_payload)
-        
+        value_temp = cgpt_th[0]
+        url_temp = 'https://strawberry.cgptiot.com.tw/iot/Temperature.php?id=1680001-1&data='+str(value_temp)
+        html = requests.post(url_temp)
+        print(html.text)
+        value_humi = cgpt_th[1]
+        url_humi = 'https://strawberry.cgptiot.com.tw/iot/Humidity.php?id=1680001-1&data='+str(value_humi)
+        html = requests.post(url_humi)
         print(html.text) 
     except:
         print('error')
