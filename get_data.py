@@ -34,4 +34,4 @@ if __name__ == '__main__':
         th_data = evi_th()
         
         print (th_data)
-        time.sleep(10)
+        time.sleep(2)
