@@ -11,7 +11,7 @@ def evi_th():
         master.set_verbose(True)
         #evi_th_data = master.execute(1, cst.READ_INPUT_REGISTERS, 1, 2)
         #time.sleep(2)
-        evi_wc_data01 = master.execute(2, cst.READ_HOLDING_REGISTERS, 0, 6)
+        evi_wc_data01 = master.execute(2, cst.READ_HOLDING_REGISTERS, 3, 1)
         time.sleep(2)
         #evi_wc_data02 = master.execute(3, cst.READ_HOLDING_REGISTERS, 2, 2)
         #time.sleep(2)
