@@ -11,10 +11,10 @@ def evi_th():
         master.set_verbose(True)
         #evi_th_data = master.execute(1, cst.READ_INPUT_REGISTERS, 1, 2)
         #time.sleep(2)
-        evi_wc_data01 = master.execute(2, cst.READ_HOLDING_REGISTERS, 3, 1)
-        time.sleep(2)
-        #evi_wc_data02 = master.execute(3, cst.READ_HOLDING_REGISTERS, 2, 2)
+        #evi_wc_data01 = master.execute(2, cst.READ_HOLDING_REGISTERS, 3, 1) #超音波
         #time.sleep(2)
+        evi_wc_data02 = master.execute(3, cst.READ_HOLDING_REGISTERS, 0, 6)
+        time.sleep(2)
         '''
         evi_th_value[0] = evi_th_data[0]*0.1
         evi_th_value[1] = evi_th_data[1]*0.1
@@ -27,7 +27,7 @@ def evi_th():
         evi_th_value = [0,0,0,0,0]
 
     #return (evi_th_value)
-    return (evi_wc_data01)
+    return (evi_wc_data02)
 
 if __name__ == '__main__':
     while True:
