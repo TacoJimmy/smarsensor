@@ -11,7 +11,7 @@ def evi_th():
         master.set_verbose(True)
         evi_th_data = master.execute(1, cst.READ_INPUT_REGISTERS, 1, 2)
         time.sleep(2)
-        evi_wc_data01 = master.execute(2, cst.READ_HOLDING_REGISTERS, 3, 1) #乳液
+        evi_wc_data01 = master.execute(2, cst.READ_HOLDING_REGISTERS, 0, 6) # 2臭味 3乳液
         time.sleep(2)
         evi_wc_data02 = master.execute(3, cst.READ_HOLDING_REGISTERS, 2, 2) # 2廁所紙 3人流
         time.sleep(2)
@@ -21,13 +21,13 @@ def evi_th():
         evi_th_value[2] = evi_wc_data01[0]   #乳液
         evi_th_value[3] = evi_wc_data02[0]   #廁所紙
         evi_th_value[4] = evi_wc_data02[1]   #人流
-        
+        evi_th_value[5] = evi_wc_data01[0]   #乳液
         time.sleep(0.5)
     except:
         evi_th_value = [0,0,0,0,0]
 
-    return (evi_th_value)
-    #return (evi_wc_data02)
+    #return (evi_th_value)
+    return (evi_wc_data01)
 
 if __name__ == '__main__':
     while True:
