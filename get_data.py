@@ -11,9 +11,9 @@ def evi_th():
         master.set_verbose(True)
         evi_th_data = master.execute(1, cst.READ_INPUT_REGISTERS, 1, 2)
         time.sleep(2)
-        evi_wc_data01 = master.execute(2, cst.READ_INPUT_REGISTERS, 2, 1)
+        evi_wc_data01 = master.execute(2, cst.READ_HOLDING_REGISTERS, 2, 1)
         time.sleep(2)
-        evi_wc_data02 = master.execute(3, cst.READ_INPUT_REGISTERS, 2, 2)
+        evi_wc_data02 = master.execute(3, cst.READ_HOLDING_REGISTERS, 2, 2)
         time.sleep(2)
         evi_th_value[0] = evi_th_data[0]*0.1
         evi_th_value[1] = evi_th_data[1]*0.1
