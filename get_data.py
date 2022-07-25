@@ -27,8 +27,8 @@ def evi_th():
     except:
         evi_th_value = [0,0,0,0,0,0,0]
 
-    #return (evi_th_value)
-    return (evi_wc_data01)
+    return (evi_th_value)
+    #return (evi_wc_data01)
 
 if __name__ == '__main__':
     while True:
