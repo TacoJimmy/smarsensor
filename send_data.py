@@ -30,6 +30,16 @@ def req_post():
         url_humi = 'https://strawberry.cgptiot.com.tw/iot/HumanTraffic.php?id=1680001&data='+str(value_human)
         html = requests.post(url_humi)
         print(html.text)
+        # get 無人
+        value_people = cgpt_th[5]
+        url_humi = 'https://strawberry.cgptiot.com.tw/iot/People.php?id=1680001-1&data='+str(value_people)
+        html = requests.post(url_humi)
+        print(html.text)
+        # get 臭味
+        value_smelly = cgpt_th[6]
+        url_humi = 'https://strawberry.cgptiot.com.tw/iot/Smelly.php?id=1680001-1&data='+str(value_smelly)
+        html = requests.post(url_humi)
+        print(html.text)
     except:
         #something error
         print('error')
