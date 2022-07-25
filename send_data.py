@@ -14,7 +14,22 @@ def req_post():
         value_humi = cgpt_th[1]
         url_humi = 'https://strawberry.cgptiot.com.tw/iot/Humidity.php?id=1680001-1&data='+str(value_humi)
         html = requests.post(url_humi)
-        print(html.text) 
+        print(html.text)
+        # get 乳液
+        value_liquid = cgpt_th[2]
+        url_humi = 'https://strawberry.cgptiot.com.tw/iot/HandLotion.php?id=1680001-1&data='+str(value_liquid)
+        html = requests.post(url_humi)
+        print(html.text)
+        # get 廁所紙
+        value_paper = cgpt_th[3]
+        url_humi = 'https://strawberry.cgptiot.com.tw/iot/ToiletPaper.php?id=1680001-1&data='+str(value_paper)
+        html = requests.post(url_humi)
+        print(html.text)
+        # get 人流
+        value_human = cgpt_th[4]
+        url_humi = 'https://strawberry.cgptiot.com.tw/iot/HumanTraffic.php?id=1680001&data='+str(value_human)
+        html = requests.post(url_humi)
+        print(html.text)
     except:
         #something error
         print('error')
