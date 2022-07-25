@@ -41,6 +41,7 @@ def req_post():
         url_humi = 'https://strawberry.cgptiot.com.tw/iot/Smelly.php?id=1680001-1&data='+str(value_smelly)
         html = requests.post(url_humi)
         #print(html.text)
+        print("Work Done")
     except:
         #something error
         print('error')
