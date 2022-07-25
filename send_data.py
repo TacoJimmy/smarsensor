@@ -6,6 +6,7 @@ def req_post():
     try:
         #get temperature
         cgpt_th = get_data.evi_th()
+        time.sleep(1)
         value_temp = cgpt_th[0]
         url_temp = 'https://strawberry.cgptiot.com.tw/iot/Temperature.php?id=1680001-1&data='+str(value_temp)
         html = requests.post(url_temp)
