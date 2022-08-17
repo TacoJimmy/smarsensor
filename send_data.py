@@ -83,8 +83,8 @@ def check_HandLotion():
         url_HandLotion = 'https://strawberry.cgptiot.com.tw/iot/ToiletPaper.php?id=1680001-1&data='+str(HandLotion_statu)
         html = requests.post(url_HandLotion)
 
-#schedule.every(2).minutes.do(req_post) 
-schedule.every(20).seconds.do(req_post)   
+schedule.every(2).minutes.do(req_post) 
+#schedule.every(20).seconds.do(req_post)   
 schedule.every(0.5).seconds.do(human_count)
 schedule.every(1).seconds.do(check_tissue)
 schedule.every(1).seconds.do(check_HandLotion)  
