@@ -70,6 +70,19 @@ def clear_people_count():
     people_count = 0
     return total_count
 
+
+def check_tissue():
+    tissue_statu = get_data.get_tissue()
+    if tissue_statu < 1000:
+        url_tissue = 'https://strawberry.cgptiot.com.tw/iot/ToiletPaper.php?id=1680001-1&data='+str(tissue_statu)
+        html = requests.post(url_tissue)
+
+def check_HandLotion():
+    HandLotion_statu = get_data.get_tissue()
+    if HandLotion_statu <= 1:
+        url_HandLotion = 'https://strawberry.cgptiot.com.tw/iot/ToiletPaper.php?id=1680001-1&data='+str(HandLotion_statu)
+        html = requests.post(url_HandLotion)
+
 schedule.every(2).minutes.do(req_post)  
 schedule.every(0.5).seconds.do(human_count)  
 
