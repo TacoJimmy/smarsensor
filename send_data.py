@@ -90,6 +90,7 @@ def check_HandLotion():
             url_HandLotion = 'https://strawberry.cgptiot.com.tw/iot/ToiletPaper.php?id=1680001-1&data='+str(HandLotion_statu)
             html = requests.post(url_HandLotion)
         print ("for check")
+        print (HandLotion_statu)
     except:
         pass
 
