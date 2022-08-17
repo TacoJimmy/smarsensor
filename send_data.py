@@ -56,11 +56,14 @@ def req_post():
 def human_count():
     global people_count
     people_statu = get_data.get_people()
-    if people_statu >= 1000:
-            people_count+=1
-            time.sleep(2)
-    #print (people_count)
-    return people_count
+    try:
+        if people_statu >= 1000:
+                people_count+=1
+                time.sleep(2)
+        #print (people_count)
+        return people_count
+    except:
+        pass
 
 def clear_people_count():
     global people_count
@@ -72,16 +75,22 @@ def clear_people_count():
 
 
 def check_tissue():
-    tissue_statu = get_data.get_tissue()
-    if tissue_statu >= 1000:
-        url_tissue = 'https://strawberry.cgptiot.com.tw/iot/ToiletPaper.php?id=1680001-1&data='+str(tissue_statu)
-        html = requests.post(url_tissue)
+    try:
+        tissue_statu = get_data.get_tissue()
+        if tissue_statu >= 1000:
+            url_tissue = 'https://strawberry.cgptiot.com.tw/iot/ToiletPaper.php?id=1680001-1&data='+str(tissue_statu)
+            html = requests.post(url_tissue)
+    except:
+        pass
 
 def check_HandLotion():
-    HandLotion_statu = get_data.get_tissue()
-    if HandLotion_statu <= 1:
-        url_HandLotion = 'https://strawberry.cgptiot.com.tw/iot/ToiletPaper.php?id=1680001-1&data='+str(HandLotion_statu)
-        html = requests.post(url_HandLotion)
+    try:
+        HandLotion_statu = get_data.get_tissue()
+        if HandLotion_statu <= 1:
+            url_HandLotion = 'https://strawberry.cgptiot.com.tw/iot/ToiletPaper.php?id=1680001-1&data='+str(HandLotion_statu)
+            html = requests.post(url_HandLotion)
+    except:
+        pass
 
 schedule.every(2).minutes.do(req_post) 
 schedule.every(1).seconds.do(human_count)
