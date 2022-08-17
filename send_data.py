@@ -10,22 +10,22 @@ def req_post():
         #get temperature
         cgpt_th = get_data.evi_th()
         time.sleep(1)
-        value_temp = cgpt_th[0]
+        value_temp = round(cgpt_th[0],1)
         url_temp = 'https://strawberry.cgptiot.com.tw/iot/Temperature.php?id=1680001-1&data='+str(value_temp)
         html = requests.post(url_temp)
         #print(value_temp)
         #get humidity
-        value_humi = cgpt_th[1]
+        value_humi = round(cgpt_th[1],1)
         url_humi = 'https://strawberry.cgptiot.com.tw/iot/Humidity.php?id=1680001-1&data='+str(value_humi)
         html = requests.post(url_humi)
         #print(value_humi)
         # get 乳液
-        value_liquid = cgpt_th[2]
+        value_liquid = round(cgpt_th[2],1)
         url_humi = 'https://strawberry.cgptiot.com.tw/iot/HandLotion.php?id=1680001-1&data='+str(value_liquid)
         html = requests.post(url_humi)
         #print(value_liquid)
         # get 廁所紙
-        value_paper = cgpt_th[3]
+        value_paper = round(cgpt_th[3],1)
         url_humi = 'https://strawberry.cgptiot.com.tw/iot/ToiletPaper.php?id=1680001-1&data='+str(value_paper)
         html = requests.post(url_humi)
         #print(value_paper)
@@ -42,7 +42,7 @@ def req_post():
         '''
         #print(html.text)
         # get 臭味
-        value_smelly = cgpt_th[6]
+        value_smelly = round(cgpt_th[6],1)
         url_humi = 'https://strawberry.cgptiot.com.tw/iot/Smelly.php?id=1680001-1&data='+str(value_smelly)
         html = requests.post(url_humi)
         #print(value_smelly)
