@@ -44,6 +44,41 @@ def get_people():
     
     return (evi_th_data[0])
 
+def get_tissue():
+    try:
+        master = modbus_rtu.RtuMaster(serial.Serial(port='/dev/ttyS1', baudrate=9600, bytesize=8, parity='N', stopbits=1, xonxoff=0))
+        master.set_timeout(5.0)
+        master.set_verbose(True)
+        evi_th_data = master.execute(3, cst.READ_HOLDING_REGISTERS, 2, 1)
+        
+    except:
+        pass
+    
+    return (evi_th_data[0])
+
+def get_HandLotion():
+    try:
+        master = modbus_rtu.RtuMaster(serial.Serial(port='/dev/ttyS1', baudrate=9600, bytesize=8, parity='N', stopbits=1, xonxoff=0))
+        master.set_timeout(5.0)
+        master.set_verbose(True)
+        evi_th_data = master.execute(2, cst.READ_HOLDING_REGISTERS, 3, 1)
+        
+    except:
+        pass
+    
+    return (evi_th_data[0])
+
+def get_people():
+    try:
+        master = modbus_rtu.RtuMaster(serial.Serial(port='/dev/ttyS1', baudrate=9600, bytesize=8, parity='N', stopbits=1, xonxoff=0))
+        master.set_timeout(5.0)
+        master.set_verbose(True)
+        evi_th_data = master.execute(3, cst.READ_HOLDING_REGISTERS, 3, 1)
+        
+    except:
+        pass
+    
+    return (evi_th_data[0])
 
 
 if __name__ == '__main__':
