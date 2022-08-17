@@ -89,6 +89,7 @@ def check_HandLotion():
         if HandLotion_statu <= 500:
             url_HandLotion = 'https://strawberry.cgptiot.com.tw/iot/ToiletPaper.php?id=1680001-1&data='+str(HandLotion_statu)
             html = requests.post(url_HandLotion)
+            print (html)
         print ("for check")
         print (HandLotion_statu)
     except:
