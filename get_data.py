@@ -3,6 +3,8 @@ import serial
 import modbus_tk.defines as cst
 from modbus_tk import modbus_rtu
 
+people_count = 0
+
 def evi_th():
     evi_th_value = [0,0,0,0,0,0,0]
     try:
@@ -29,6 +31,20 @@ def evi_th():
 
     return (evi_th_value)
     #return (evi_wc_data01)
+
+def get_people():
+    try:
+        master = modbus_rtu.RtuMaster(serial.Serial(port='/dev/ttyS1', baudrate=9600, bytesize=8, parity='N', stopbits=1, xonxoff=0))
+        master.set_timeout(5.0)
+        master.set_verbose(True)
+        evi_th_data = master.execute(3, cst.READ_HOLDING_REGISTERS, 3, 1)
+        
+    except:
+        evi_th_data[0] = 0
+    
+    return (evi_th_data[0])
+
+
 
 if __name__ == '__main__':
     while True:
