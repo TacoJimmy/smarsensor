@@ -3,6 +3,7 @@ import time
 import get_data
 import schedule 
 
+people_count = 0
 
 def req_post():
     try:
@@ -50,8 +51,24 @@ def req_post():
         #something error
         print('error')
 
+def human_count():
+    global people_count
+    people_statu = get_data.get_people()
+    if people_statu > 1000:
+            people_count+=1
+            time.sleep(2)
+    return people_count
+
+def clear_people_count():
+    global people_count
+    
+    total_count = people_count
+    
+    people_count = 0
+    return total_count
+
 schedule.every(2).minutes.do(req_post)  
-schedule.every(0.5).seconds.do(get_data.human_count())  
+schedule.every(0.5).seconds.do(human_count)  
 
 if __name__ == '__main__':
     while True:
