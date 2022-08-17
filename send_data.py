@@ -13,27 +13,27 @@ def req_post():
         value_temp = cgpt_th[0]
         url_temp = 'https://strawberry.cgptiot.com.tw/iot/Temperature.php?id=1680001-1&data='+str(value_temp)
         html = requests.post(url_temp)
-        print(value_temp)
+        #print(value_temp)
         #get humidity
         value_humi = cgpt_th[1]
         url_humi = 'https://strawberry.cgptiot.com.tw/iot/Humidity.php?id=1680001-1&data='+str(value_humi)
         html = requests.post(url_humi)
-        print(value_humi)
+        #print(value_humi)
         # get 乳液
         value_liquid = cgpt_th[2]
         url_humi = 'https://strawberry.cgptiot.com.tw/iot/HandLotion.php?id=1680001-1&data='+str(value_liquid)
         html = requests.post(url_humi)
-        print(value_liquid)
+        #print(value_liquid)
         # get 廁所紙
         value_paper = cgpt_th[3]
         url_humi = 'https://strawberry.cgptiot.com.tw/iot/ToiletPaper.php?id=1680001-1&data='+str(value_paper)
         html = requests.post(url_humi)
-        print(value_paper)
+        #print(value_paper)
         # get 人流
         value_human = clear_people_count()
         url_humi = 'https://strawberry.cgptiot.com.tw/iot/HumanTraffic.php?id=1680001&data='+str(value_human)
         html = requests.post(url_humi)
-        print(value_human)
+        #print(value_human)
         # get 無人
         '''
         value_people = cgpt_th[5]
@@ -45,7 +45,7 @@ def req_post():
         value_smelly = cgpt_th[6]
         url_humi = 'https://strawberry.cgptiot.com.tw/iot/Smelly.php?id=1680001-1&data='+str(value_smelly)
         html = requests.post(url_humi)
-        print(value_smelly)
+        #print(value_smelly)
         print("Work Done")
     except:
         #something error
@@ -59,7 +59,7 @@ def human_count():
     if people_statu > 1000:
             people_count+=1
             time.sleep(2)
-    print (people_count)
+    #print (people_count)
     return people_count
 
 def clear_people_count():
@@ -84,7 +84,6 @@ def check_HandLotion():
         html = requests.post(url_HandLotion)
 
 schedule.every(2).minutes.do(req_post) 
-#schedule.every(20).seconds.do(req_post)   
 schedule.every(1).seconds.do(human_count)
 schedule.every(1).seconds.do(check_tissue)
 schedule.every(1).seconds.do(check_HandLotion)  
