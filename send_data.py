@@ -51,7 +51,7 @@ def req_post():
         print('error')
 
 schedule.every(2).minutes.do(req_post)  
-schedule.every(0.5).seconds.do(get_data.human_count)  
+schedule.every(0.5).seconds.do(get_data.human_count())  
 
 if __name__ == '__main__':
     while True:
