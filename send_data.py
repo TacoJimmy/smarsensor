@@ -73,7 +73,7 @@ def clear_people_count():
 
 def check_tissue():
     tissue_statu = get_data.get_tissue()
-    if tissue_statu < 1000:
+    if tissue_statu > 1000:
         url_tissue = 'https://strawberry.cgptiot.com.tw/iot/ToiletPaper.php?id=1680001-1&data='+str(tissue_statu)
         html = requests.post(url_tissue)
 
