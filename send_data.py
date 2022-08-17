@@ -98,8 +98,8 @@ def check_HandLotion():
 
 schedule.every(2).minutes.do(req_post) 
 schedule.every(1).seconds.do(human_count)
-schedule.every(1).seconds.do(check_tissue)
-schedule.every(1).seconds.do(check_HandLotion)  
+schedule.every(5).seconds.do(check_tissue)
+schedule.every(5).seconds.do(check_HandLotion)  
 
 if __name__ == '__main__':
     while True:
