@@ -30,7 +30,7 @@ def req_post():
         html = requests.post(url_humi)
         print(value_paper)
         # get 人流
-        value_human = get_data.clear_people_count
+        value_human = clear_people_count
         url_humi = 'https://strawberry.cgptiot.com.tw/iot/HumanTraffic.php?id=1680001&data='+str(value_human)
         html = requests.post(url_humi)
         print(value_human)
