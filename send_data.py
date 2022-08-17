@@ -86,7 +86,7 @@ def check_tissue():
 def check_HandLotion():
     try:
         HandLotion_statu = get_data.get_tissue()
-        if HandLotion_statu <= 1:
+        if HandLotion_statu >= 500:
             url_HandLotion = 'https://strawberry.cgptiot.com.tw/iot/ToiletPaper.php?id=1680001-1&data='+str(HandLotion_statu)
             html = requests.post(url_HandLotion)
     except:
@@ -95,7 +95,7 @@ def check_HandLotion():
 schedule.every(2).minutes.do(req_post) 
 schedule.every(1).seconds.do(human_count)
 schedule.every(1).seconds.do(check_tissue)
-schedule.every(1).seconds.do(check_HandLotion)  
+schedule.every(5).seconds.do(check_HandLotion)  
 
 if __name__ == '__main__':
     while True:
