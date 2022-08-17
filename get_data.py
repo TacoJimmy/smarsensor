@@ -38,11 +38,11 @@ def get_people():
         master.set_timeout(5.0)
         master.set_verbose(True)
         evi_th_data = master.execute(3, cst.READ_HOLDING_REGISTERS, 3, 1)
-        
+        return (evi_th_data[0])
     except:
         pass
     
-    return (evi_th_data[0])
+    
 
 def get_tissue():
     try:
@@ -50,11 +50,11 @@ def get_tissue():
         master.set_timeout(5.0)
         master.set_verbose(True)
         evi_th_data = master.execute(3, cst.READ_HOLDING_REGISTERS, 2, 1)
-        
+        return (evi_th_data[0])
     except:
         pass
     
-    return (evi_th_data[0])
+    
 
 def get_HandLotion():
     try:
@@ -62,11 +62,11 @@ def get_HandLotion():
         master.set_timeout(5.0)
         master.set_verbose(True)
         evi_th_data = master.execute(2, cst.READ_HOLDING_REGISTERS, 3, 1)
-        
+        return (evi_th_data[0])
     except:
         pass
     
-    return (evi_th_data[0])
+    
 
 def get_people():
     try:
@@ -74,11 +74,11 @@ def get_people():
         master.set_timeout(5.0)
         master.set_verbose(True)
         evi_th_data = master.execute(3, cst.READ_HOLDING_REGISTERS, 3, 1)
-        
+        return (evi_th_data[0])
     except:
         pass
     
-    return (evi_th_data[0])
+    
 
 
 if __name__ == '__main__':
