@@ -56,7 +56,7 @@ def req_post():
 def human_count():
     global people_count
     people_statu = get_data.get_people()
-    if people_statu > 1000:
+    if people_statu >= 1000:
             people_count+=1
             time.sleep(2)
     #print (people_count)
