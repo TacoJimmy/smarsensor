@@ -40,7 +40,7 @@ def get_people():
         evi_th_data = master.execute(3, cst.READ_HOLDING_REGISTERS, 3, 1)
         
     except:
-        evi_th_data[0] = 0
+        pass
     
     return (evi_th_data[0])
 
